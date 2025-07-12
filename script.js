@@ -1,10 +1,14 @@
-const increaseBtn = document.getElementById("increase-btn");
-const decreaseBtn = document.getElementById("decrease-btn");
-const spaceBtn = document.getElementById("displaySpace");
+const increaseBtn = document.querySelectorAll(".fa-plus-circle");
+const decreaseBtn = document.querySelectorAll(".decrease-btn");
+const spaceBtn = document.querySelectorAll(".quantity");
+//sumPrice
+const PriceSum = document.getElementById("total-sum");
+const priceTag = document.getElementById("unit-price");
 
 let count = 0;
-const minCount = 0;
+const minCount = 1;
 const maxCount = 10;
+// total price
 
 function counterUpdate() {
   spaceBtn.textContent = count;
@@ -18,7 +22,7 @@ decreaseBtn.addEventListener("click", () => {
   }
 });
 increaseBtn.addEventListener("click", () => {
-  if (count > maxCount) {
+  if (count <= maxCount) {
     count++;
     counterUpdate();
   }
